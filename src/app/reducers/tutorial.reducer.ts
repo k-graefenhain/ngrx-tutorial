@@ -1,5 +1,5 @@
 import { Tutorial } from '../models/tutorial.model';
-import { Actions, ADD_TUTORIAL, REMOVE_TUTORIAL } from '../actions/tutorial.actions';
+import { TutorialActions, ADD_TUTORIAL, REMOVE_TUTORIAL } from '../actions/tutorial.actions';
 
 // const initialState: Tutorial = {
 //     name: 'Initial Tutorial',
@@ -10,7 +10,7 @@ const initialState: Tutorial = {
     url: 'https://coursetro.com/posts/code/151/Angular-Ngrx-Store-Tutorial---Learn-Angular-State-Management'
 }
 
-export function reducer(state: Tutorial[] = [initialState], action: Actions) {
+export function reducer(state: Tutorial[] = [initialState], action: TutorialActions) {
     switch (action.type) {
         case ADD_TUTORIAL:
             return [...state, action.payload];

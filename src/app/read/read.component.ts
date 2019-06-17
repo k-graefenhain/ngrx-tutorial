@@ -12,13 +12,14 @@ import { RemoveTutorial } from '../actions/tutorial.actions';
 })
 export class ReadComponent implements OnInit {
 
-  tutorials$: Observable<Tutorial[]>;
+  tutorials$: Observable<Tutorial[]> = this.store.select(state => state.tutorial);
 
   constructor(private store: Store<AppState>) {
     this.tutorials$ = store.select('tutorial');
   }
 
   ngOnInit() {
+    this.store.dispatch({type: '[TUTORIAL] LOAD'});
   }
 
   delTutorial(i: number) {

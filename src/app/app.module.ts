@@ -6,6 +6,8 @@ import { StoreModule } from '@ngrx/store';
 import { reducer } from './reducers/tutorial.reducer';
 import { ReadComponent } from './read/read.component';
 import { CreateComponent } from './create/create.component';
+import { TutorialEffects } from './effects/tutorial.effects';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -15,9 +17,10 @@ import { CreateComponent } from './create/create.component';
   ],
   imports: [
     BrowserModule,
-      StoreModule.forRoot({
-        tutorial: reducer
-      })
+    StoreModule.forRoot({
+      tutorial: reducer
+    }),
+    EffectsModule.forFeature([TutorialEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

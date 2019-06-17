@@ -13,7 +13,7 @@ export class CreateComponent implements OnInit {
   constructor(private store: Store<AppState>) {}
 
   addTutorial(name, url) {
-    this.store.dispatch(new AddTutorial({name: name, url: url}))
+    this.store.dispatch(new AddTutorial({name: name, url: url}));
   }
 
   ngOnInit() {
